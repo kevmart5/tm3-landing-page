@@ -65,6 +65,7 @@ export class ComponentsComponent implements OnInit {
       this.showMessageUser = true;
       setTimeout(() => {
         this.showMessageUser = false;
+        form.resetForm();
       }, 3000);
       console.log(message);
     });
