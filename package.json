@@ -29,6 +29,8 @@
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "bootstrap": "4.5.3",
     "core-js": "3.8.1",
+    "firebase-tools": "^9.11.0",
+    "g": "^2.0.1",
     "jquery": "3.5.1",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "ng2-nouislider": "1.8.2",

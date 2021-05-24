@@ -22,6 +22,8 @@ export class ComponentsComponent implements OnInit {
   focus2;
   date: { year: number; month: number };
   model: NgbDateStruct;
+  showMessageUser: boolean = false;
+
   constructor(private renderer: Renderer2) {}
   isWeekend(date: NgbDateStruct) {
     const d = new Date(date.year, date.month - 1, date.day);
@@ -54,8 +56,16 @@ export class ComponentsComponent implements OnInit {
       To: `${form.value.userEmail}`,
       From: "mkevin755@gmail.com",
       Subject: "Formulario de contacto",
-      Body: "Hemos recibido su mensaje. Pronto alguno de nuestros colaboradores se prondrá en contacto con usted. Saludos cordiales, TM3",
+      Body:
+        "<p>Hemos recibido su mensaje.</p><br/>" +
+        "<p>Pronto alguno de nuestros colaboradores se prondrá en contacto con usted.</p>" +
+        `<p>Su mensaje: ${form.value.userMessage}</p>` +
+        "<p>Saludos cordiales, TM3</p>",
     }).then((message) => {
+      this.showMessageUser = true;
+      setTimeout(() => {
+        this.showMessageUser = false;
+      }, 3000);
       console.log(message);
     });
   }
